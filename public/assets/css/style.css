@@ -1,0 +1,208 @@
+.bg-main-color {
+    background-color: #2f318b;
+}
+.yellow-color {
+    color: #fdd100;
+}
+.bg-yellow-table {
+    background-color: #f9fa83;
+}
+.bg-blue-table {
+    background-color: #6c6ea8;
+}
+.btn-images {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.h-screen {
+    height: 100vh;
+    overflow: hidden;
+}
+@media (max-width: 990px) {
+    /* Footer */
+    .logo-footer .logodishub {
+        width: 100%;
+    }
+    /* Footer */
+}
+@media (max-width: 768px) {
+    /* home */
+    .menu {
+        gap: 12px;
+    }
+    .menu .bg-main-color {
+        width: 20%;
+    }
+    .row a p {
+        font-size: 12px;
+    }
+    .jadwal {
+        font-size: 20px;
+    }
+    .ganti-shift {
+        font-size: 12px;
+    }
+    /* home */
+
+    /* Footer */
+    .logoapps {
+        width: 40%;
+    }
+    .logo-footer .logodishub {
+        width: 50%;
+    }
+    .desc {
+        font-size: 12px;
+    }
+    .contact {
+        font-size: 16px;
+    }
+    /* Footer */
+
+    /* Responsive Font */
+    .RfTitle {
+        font-size: 3vw;
+    }
+    .RfContent {
+        font-size: 2vw;
+    }
+    /* Responsive Font */
+
+    /* Lihat Presensi */
+    .LPtitle {
+        font-size: 3vw;
+    }
+    .LPcontent {
+        font-size: 2vw;
+    }
+    /* Lihat Presensi */
+
+    /* Laporan Kerusakan */
+    .LKtitle {
+        font-size: 3vw;
+    }
+    .LKcontent {
+        font-size: 2vw;
+    }
+    /* Laporan Kerusakan */
+
+    /* Presensi */
+    .Ptitle {
+        font-size: 3vw;
+    }
+    .Pcontent {
+        font-size: 2vw;
+    }
+    .Pimg {
+        width: 10%;
+    }
+    /* Presensi */
+
+    /* Shift */
+    .ShTitle {
+        font-size: 3vw;
+    }
+    .ShContent {
+        font-size: 2vw;
+    }
+    /* Shift */
+}
+@media (max-width: 578px) {
+    /* home */
+    .profile-img {
+        width: 100%;
+    }
+    .nama {
+        font-size: 16px;
+    }
+    .menu .bg-main-color {
+        width: 45%;
+    }
+    /* home */
+}
+@media (max-width: 458px) {
+    /* home */
+    .profile {
+        width: 50%;
+    }
+    .profile-img {
+        width: 80%;
+    }
+    .col-nama {
+        width: 50%;
+    }
+    .nama {
+        font-size: 14px;
+    }
+    .role {
+        font-size: 12px;
+    }
+    .logout {
+        display: none;
+    }
+    .jadwal {
+        font-size: 16px;
+    }
+    .col-lg-6 .ganti-shift {
+        font-size: 10px;
+    }
+    table thead tr .bulan {
+        font-size: 12px;
+    }
+    table thead tr .title-table {
+        font-size: 12px;
+    }
+    table tbody tr .isi-table {
+        font-size: 12px;
+    }
+    /* home */
+
+    /* Responsive Font */
+    .RfTitle {
+        font-size: 14px;
+    }
+    .RfContent {
+        font-size: 10px;
+    }
+    /* Responsive Font */
+
+    /* Lihat Presensi */
+    .LPtitle {
+        font-size: 14px;
+    }
+    .LPcontent {
+        font-size: 10px;
+    }
+    /* Lihat Presensi */
+
+    /* Laporan Kerusakan */
+    .LKtitle {
+        font-size: 14px;
+    }
+    .LKcontent {
+        font-size: 10px;
+    }
+    /* Laporan Kerusakan */
+
+    /* Presensi */
+    .Ptitle {
+        font-size: 14px;
+    }
+    .Pcontent {
+        font-size: 10px;
+    }
+    .Pimg {
+        width: 50px;
+    }
+    /* Presensi */
+
+    /* Shift */
+    .ShTitle {
+        font-size: 14px;
+    }
+    .ShContent {
+        font-size: 10px;
+    }
+    /* Shift */
+}
