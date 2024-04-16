@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LapKerusakanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MaminController;
@@ -22,7 +23,9 @@ Route::resource('/admin/datakaryawan', UserController::class)->middleware('auth'
 
 Route::get('/admin', [HomeController::class, 'homeadmin'])->middleware('auth');
 
-Route::resource('/admin/mamins', MaminController::class);
+Route::resource('/admin/mamins', MaminController::class)->middleware('auth');
+
+Route::resource('/admin/jadwal', JadwalController::class)->middleware('auth');
 
 
 Route::get('/lihatpresensi', function () {
@@ -36,4 +39,7 @@ Route::get('/jadwal', function () {
 });
 Route::get('/idxjadwal', function () {
     return view('admin.jadwal.index');
+});
+Route::get('/presensi', function () {
+    return view('users.presensi.create');
 });

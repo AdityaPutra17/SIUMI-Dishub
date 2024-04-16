@@ -25,8 +25,7 @@
 
             <!-- Main content -->
             <section class="content">
-
-                <div class="row">
+                <div class="row w-100 ">
                     <div class="col-lg-4 col-6">
                         <div class="small-box bg-success">
                             <div class="inner">

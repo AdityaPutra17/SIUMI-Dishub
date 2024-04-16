@@ -18,8 +18,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="hold-transition sidebar-mini">
-    <nav class="main-header navbar navbar-expand bg-main-color row justify-content-between">
+<body class="hold-transition sidebar-mini overflow-y-hidden ">
+    <nav class="main-header navbar navbar-expand bg-main-color">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link " data-widget="pushmenu" href="#"><i class="fas fa-bars text-light"></i></a>
@@ -44,7 +44,7 @@
 
     <!-- jQuery -->
     <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
-    <!-- Bootstrap 4 -->
+    <!-- Bootstrap -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('dist/js/adminlte.min.js')}}"></script>

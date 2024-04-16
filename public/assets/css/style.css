@@ -1,3 +1,7 @@
+/* * {
+    overflow-y: hidden;
+} */
+
 .bg-main-color {
     background-color: #2f318b;
 }
@@ -205,4 +209,23 @@
         font-size: 10px;
     }
     /* Shift */
+}
+
+/* Styling untuk form */
+.custom-file-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+.custom-file-label {
+    cursor: pointer;
+}
+/* Preview foto */
+#image-preview {
+    width: 100px;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    display: none;
+    /* Sembunyikan preview awalnya */
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Shift;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -26,6 +27,27 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('admin123'),
             'tgl_lahir' => '1990-01-01', // Contoh tanggal lahir
             'role' => 'admin',
+        ]);
+        User::create([
+            'name' => 'user',
+            'email' => 'user@gmail.com',
+            'password' => Hash::make('user123'),
+            'tgl_lahir' => '1990-01-01', // Contoh tanggal lahir
+            'role' => 'Security',
+        ]);
+
+        Shift::create([
+            'nama' => 'pagi',
+            'jam_masuk' =>'08:00',
+            'jam_keluar'=>'20:00',
+
+        ]);
+
+        Shift::create([
+            'nama' => 'malam',
+            'jam_masuk' =>'20:00',
+            'jam_keluar'=>'08:00',
+
         ]);
     }
 }

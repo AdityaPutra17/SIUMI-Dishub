@@ -30,6 +30,18 @@ class User extends Authenticatable
     {
         return $this->hasMany(LapKerusakan::class);
     }
+    public function jadwal(){
+        return $this->hasOne(Jadwal::class);
+    }
+    public function presensi(){
+        return $this->hasMany(Presensi::class);
+    }
+    public function pengajuan_izin(){
+        return $this->hasMany(pengajuan_izin::class);
+    }
+    public function gantiShift(){
+        return $this->hasMany(ganti_shift::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -23,8 +23,6 @@ class UserController extends Controller
         }
 
         return view('admin.datakaryawan.index', compact('users'));
-        // $users = User::orderBy('name')->get();
-        // return view('admin.datakaryawan.index', compact('users'));
     }
 
     /**

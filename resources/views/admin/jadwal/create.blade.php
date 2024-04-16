@@ -20,35 +20,53 @@
         </div>
     </section>
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="col-12 px-4 py-3 rounded bg-white">
-            <form>
-                <div class="mb-3 ShContent">
-                    <label for="name" class="form-label ">Nama</label>
-                    <input type="text" class="form-control form ShContent" id="name" placeholder="Masukan Nama."></input>
-                </div>
-                <div class="mb-3 ShContent">
-                    <label for="Date" class="form-label">Tanggal</label>
-                    <input type="date" class="form-control form ShContent" id="Date">
-                </div>
-                <div aria-rowcount="" class="d-grid gap-6 col-6 col-md-2 mx-auto mt-3 text-center">
-                    <p><strong>Pilih Shift</strong></p>
-                    <div class="input-group RfContent">
-                        <select class="form-select text-center RfContent" id="PilihJadwal">
-                            <option selected disabled>Shift</option>
-                            <option value="1">06.00 - 18.00</option>
-                            <option value="2">18.00 - 06.00</option>
-                        </select>
-                    </div>
-                </div>
+    <h2>Create Jadwal</h2>
 
-                <div class="d-grid gap-2 col-3 mx-auto mt-5">
-                    <button type="submit" class="btn btn-primary ShContent">Submit</button>
-                </div>
-            </form>
+    @if ($errors->any())
+        <div>
+            <strong>Whoops!</strong> Ada masalah dengan input Anda.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
-    </section>
+    @endif
+
+    @if (session('success'))
+        <div>
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <form action="{{route('jadwal.store')}}" method="POST">
+        @csrf
+        <div>
+            <label for="id_user">Nama Karyawan:</label>
+            <select name="id_user" id="id_user" required>
+                <option selected disabled>Pilih Nama Karyawan</option>
+                @foreach ($users as $user)
+                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>
+            <label for="id_shift">Shift:</label>
+            <select name="id_shift" id="id_shift" required>
+                <option selected disabled>Pilih Shift</option>
+                @foreach ($shifts as $shift)
+                    <option value="{{ $shift->id }}">{{ $shift->nama }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>
+            <label for="tgl_masuk">Tanggal Masuk:</label>
+            <input type="date" name="tgl_masuk" id="tgl_masuk" required>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
 </div>
 
 @endsection
