@@ -14,9 +14,9 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        //\
-        $jadwal = Jadwal::all();
-        return view('admin.jadwal.index', compact('jadwal'));
+        //
+        $jadwals = Jadwal::with('user')->orderBy('id_user')->get();
+        return view('admin.jadwal.index', compact('jadwals'));
     }
 
     /**

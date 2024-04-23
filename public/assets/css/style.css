@@ -72,53 +72,11 @@
         font-size: 2vw;
     }
     /* Responsive Font */
-
-    /* Lihat Presensi */
-    .LPtitle {
-        font-size: 3vw;
-    }
-    .LPcontent {
-        font-size: 2vw;
-    }
-    /* Lihat Presensi */
-
-    /* Laporan Kerusakan */
-    .LKtitle {
-        font-size: 3vw;
-    }
-    .LKcontent {
-        font-size: 2vw;
-    }
-    /* Laporan Kerusakan */
-
-    /* Presensi */
-    .Ptitle {
-        font-size: 3vw;
-    }
-    .Pcontent {
-        font-size: 2vw;
-    }
-    .Pimg {
-        width: 10%;
-    }
-    /* Presensi */
-
-    /* Shift */
-    .ShTitle {
-        font-size: 3vw;
-    }
-    .ShContent {
-        font-size: 2vw;
-    }
-    /* Shift */
 }
 @media (max-width: 578px) {
     /* home */
     .profile-img {
         width: 100%;
-    }
-    .nama {
-        font-size: 16px;
     }
     .menu .bg-main-color {
         width: 45%;
@@ -135,9 +93,6 @@
     }
     .col-nama {
         width: 50%;
-    }
-    .nama {
-        font-size: 14px;
     }
     .role {
         font-size: 12px;
@@ -164,51 +119,12 @@
 
     /* Responsive Font */
     .RfTitle {
-        font-size: 14px;
+        font-size: 16px;
     }
     .RfContent {
-        font-size: 10px;
+        font-size: 12px;
     }
     /* Responsive Font */
-
-    /* Lihat Presensi */
-    .LPtitle {
-        font-size: 14px;
-    }
-    .LPcontent {
-        font-size: 10px;
-    }
-    /* Lihat Presensi */
-
-    /* Laporan Kerusakan */
-    .LKtitle {
-        font-size: 14px;
-    }
-    .LKcontent {
-        font-size: 10px;
-    }
-    /* Laporan Kerusakan */
-
-    /* Presensi */
-    .Ptitle {
-        font-size: 14px;
-    }
-    .Pcontent {
-        font-size: 10px;
-    }
-    .Pimg {
-        width: 50px;
-    }
-    /* Presensi */
-
-    /* Shift */
-    .ShTitle {
-        font-size: 14px;
-    }
-    .ShContent {
-        font-size: 10px;
-    }
-    /* Shift */
 }
 
 /* Styling untuk form */
@@ -219,13 +135,14 @@
 }
 .custom-file-label {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-/* Preview foto */
-#image-preview {
-    width: 100px;
-    height: 200px;
-    border: 1px solid #ccc;
-    margin-top: 10px;
-    display: none;
-    /* Sembunyikan preview awalnya */
+.custom-file-preview {
+    width: 250px;
+    height: 400px;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
 }

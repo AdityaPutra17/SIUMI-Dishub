@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('ganti_shifts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
+            $table->foreignId('id_user_uploader')->constrained('users')->onDelete('cascade');
+            $table->foreignId('id_jadwal')->constrained('jadwals')->onDelete('cascade');
             $table->foreignId('id_shift')->constrained('shifts')->onDelete('cascade');
+            $table->string('ket');
             $table->timestamps();
         });
     }

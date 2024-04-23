@@ -8,9 +8,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h3 class="ShTitle">Jadwal Security</h3>
+                    <h3 class="RfTitle">Edit Jadwal Security</h3>
                 </div>
-                <div class="col-sm-6 ShContent">
+                <div class="col-sm-6 RfContent">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item active">Form Jadwal Page</li>
@@ -22,33 +22,70 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="col-12 px-4 py-3 rounded bg-white">
-            <form>
-                <div class="mb-3 ShContent">
-                    <label for="name" class="form-label ">Nama</label>
-                    <input type="text" class="form-control form ShContent" id="name" placeholder="Masukan Nama."></input>
-                </div>
-                <div class="mb-3 ShContent">
-                    <label for="Date" class="form-label">Tanggal</label>
-                    <input type="date" class="form-control form ShContent" id="Date">
-                </div>
-                <div class="dropdown mb-3 ShContent">
-                    <p class="shift1">Pilih Shift</p>
-                    <button class="btn btn-secondary dropdown-toggle form ShContent" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Shift
-                    </button>
-                    <ul class="dropdown-menu ShContent">
-                        <li><a class="dropdown-item form" href="#">Pagi</a></li>
-                        <li><a class="dropdown-item form" href="#">Malam</a></li>
+        <div class="py-4 px-3">
+            <div class="shadow px-3 py-4 mb-4 bg-body-tertiary rounded">
+                @if ($errors->any())
+                <div>
+                    <strong>Whoops!</strong> Ada masalah dengan input Anda.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
                     </ul>
                 </div>
+                @endif
 
-                <div class="d-grid gap-2 col-3 mx-auto mt-5">
-                    <button type="submit" class="btn btn-primary ShContent">Submit</button>
-                </div>
-            </form>
+                @if (session('success'))
+                    <div>
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                <form action="{{route('jadwal.store')}}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="row pb-2">
+                        <div class="col-2">
+                            <label for="id_user" class="align-middle">Nama Karyawan</label><br>
+                        </div>
+                        <div class="col-10">
+                            <select name="id_user" id="id_user" class="text-center form-select RfContent text-capitalize"  required>
+                                <option disabled>Pilih Nama karyawan</option>
+                                @foreach ($users as $user)
+                                    <option value="{{ $user->id }}" class="text-capitalize" @if($jadwal->id_user == $user->id)selected @endif>{{ $user->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row pb-2">
+                        <div class="col-2">
+                            <label for="id_shift" class="align-middle">Shift</label>
+                        </div>
+                        <div class="col-10">
+                            <select name="id_shift" id="id_shift" class="text-center form-select RfContent text-capitalize" required>
+                                <option disabled>Pilih shift</option>
+                                @foreach ($shifts as $shift)
+                                    <option value="{{ $shift->id }}" class="text-capitalize" @if($jadwal->id_shift == $shift->id) selected @endif>{{ $shift->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row pb-2">
+                        <div class="col-2">
+                            <label for="tgl_masuk" class="align-middle">Tanggal Masuk</label>
+                        </div>
+                        <div class="col-10">
+                            <input type="date" name="tgl_masuk" id="tgl_masuk" class="text-center text-uppercase form-control RfContent" value="{{ $jadwal->tgl_masuk }}" required>
+                        </div>
+                    </div>
+                    <div class="mx-auto justify-content-center py-3 text-center">
+                        <button type="submit" class="btn btn-primary RfContent">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
+
 </div>
 
 @endsection

@@ -45,30 +45,36 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($kerusakans as $index => $kerusakan )
-                            <tr>
-                                <td>{{$index + 1}}</td>
-                                <td>{{$kerusakan->user->name}}</td>
-                                <td>{{$kerusakan->user->role}}</td>
-                                <td>{{$kerusakan->created_at}}</td>
-                                <td>{{$kerusakan->nama_brg}}</td>
-                                <td>{{$kerusakan->ket}}</td>
-                                <td class="row justify-content-center ">
-                                    <div class="col-3">
-                                        <a href="{{ route('laporankerusakan.show', $kerusakan->id) }}"><i class="fas fa-eye"></i></a>
-                                    </div>
-                                    <div class="col-3">
-                                        <form action="{{ route('laporankerusakan.destroy', $kerusakan->id) }}" method="POST">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit" class="border-0 bg-white">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-                            @endforeach
+                            @if (count($kerusakans)>0)
+                                @foreach ($kerusakans as $index => $kerusakan )
+                                <tr>
+                                    <td>{{$index + 1}}</td>
+                                    <td>{{$kerusakan->user->name}}</td>
+                                    <td>{{$kerusakan->user->role}}</td>
+                                    <td>{{$kerusakan->created_at}}</td>
+                                    <td>{{$kerusakan->nama_brg}}</td>
+                                    <td>{{$kerusakan->ket}}</td>
+                                    <td class="row justify-content-center ">
+                                        <div class="col-3">
+                                            <a href="{{ route('laporankerusakan.show', $kerusakan->id) }}"><i class="fas fa-eye"></i></a>
+                                        </div>
+                                        <div class="col-3">
+                                            <form action="{{ route('laporankerusakan.destroy', $kerusakan->id) }}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="border-0 bg-white">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td colspan="7" class="text-secondary text-center ">Data Tidak Ada</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>

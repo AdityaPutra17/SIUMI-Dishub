@@ -22,6 +22,6 @@ class Shift extends Model
 
     public function gantishift()
     {
-        return $this->hasMany(ganti_shift::class);
+        return $this->hasMany(GantiShift::class);
     }
 }

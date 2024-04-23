@@ -36,11 +36,11 @@ class User extends Authenticatable
     public function presensi(){
         return $this->hasMany(Presensi::class);
     }
-    public function pengajuan_izin(){
-        return $this->hasMany(pengajuan_izin::class);
+    public function pengajuanIzin(){
+        return $this->hasMany(PengajuanIzin::class);
     }
     public function gantiShift(){
-        return $this->hasMany(ganti_shift::class);
+        return $this->hasMany(GantiShift::class);
     }
     /**
      * The attributes that should be hidden for serialization.

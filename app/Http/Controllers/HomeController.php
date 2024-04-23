@@ -2,13 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jadwal;
 use App\Models\LapKerusakan;
+use App\Models\PengajuanIzin;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('home');
+        $userId = Auth::id();
+
+        $jadwals = Jadwal::where('id_user', $userId)->orderBy('tgl_masuk')->get();
+
+        return view('home', compact('jadwals'));
     }
     public function homeadmin(){
         return view('admin.homeadmin');

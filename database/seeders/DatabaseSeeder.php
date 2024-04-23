@@ -25,14 +25,14 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin123'),
-            'tgl_lahir' => '1990-01-01', // Contoh tanggal lahir
+            'tgl_lahir' => '1990-01-01',
             'role' => 'admin',
         ]);
         User::create([
             'name' => 'user',
             'email' => 'user@gmail.com',
             'password' => Hash::make('user123'),
-            'tgl_lahir' => '1990-01-01', // Contoh tanggal lahir
+            'tgl_lahir' => '1990-01-01',
             'role' => 'Security',
         ]);
 

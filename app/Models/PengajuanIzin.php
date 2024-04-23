@@ -5,26 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pengajuan_izin extends Model
+class PengajuanIzin extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'presence_id',
-        'status_pengajuan_id',
+        'id_user',
         'tgl_mulai',
         'tgl_selesai',
         'lampiran',
+        'status',
         'keterangan',
     ];
 
-    public function presensi()
+    public function user()
     {
-        return $this->belongsTo(Presensi::class);
-    }
-
-    public function status_pengajuan()
-    {
-        return $this->belongsTo(Status_pengajuan::class);
+        return $this->belongsTo(User::class, 'id_user', 'id');
     }
 }
 

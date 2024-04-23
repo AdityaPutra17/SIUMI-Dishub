@@ -47,33 +47,39 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($mamins as $index => $mamin )
-                        <tr>
-                            <td>{{$index + 1}}</td>
+                        @if (count($mamins) > 0)
+                            @foreach ($mamins as $index => $mamin )
+                            <tr>
+                                <td>{{$index + 1}}</td>
 
-                            <td>{{$mamin->tanggal}}</td>
-                            <td>{{$mamin->name}}</td>
-                            <td>{{$mamin->jenis}}</td>
-                            <td>{{$mamin->qty}}</td>
-                            <td>{{$mamin->anggaran}}</td>
-                            <td>{{$mamin->status}}</td>
-                            <td>{{$mamin->ket}}</td>{{-- g bisa long text (berantakan kalo long text) --}}
-                            <td class="row justify-content-center ">
-                                <div class="col-3">
-                                    <a href="{{ route('mamins.show', $mamin->id) }}"><i class="fas fa-eye"></i></a>
-                                </div>
-                                <div class="col-3">
-                                    <form action="{{ route('mamins.destroy', $mamin->id) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="border-0 bg-white">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                        @endforeach
+                                <td>{{$mamin->tanggal}}</td>
+                                <td>{{$mamin->name}}</td>
+                                <td>{{$mamin->jenis}}</td>
+                                <td>{{$mamin->qty}}</td>
+                                <td>{{$mamin->anggaran}}</td>
+                                <td>{{$mamin->status}}</td>
+                                <td>{{$mamin->ket}}</td>{{-- g bisa long text (berantakan kalo long text) --}}
+                                <td class="row justify-content-center ">
+                                    <div class="col-3">
+                                        <a href="{{ route('mamins.show', $mamin->id) }}"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                    <div class="col-3">
+                                        <form action="{{ route('mamins.destroy', $mamin->id) }}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="border-0 bg-white">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td colspan="9"  class="text-secondary text-center">Tidak ada Data</td>
+                            </tr>
+                        @endif
                     </tbody>
                 </table>
             </div>

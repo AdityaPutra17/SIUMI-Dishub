@@ -9,7 +9,7 @@ class Presensi extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'schedule_id',
+        'id_jadwal',
         'status_hadir',
     ];
 
