@@ -11,10 +11,12 @@ class Presensi extends Model
     protected $fillable = [
         'id_jadwal',
         'status_hadir',
+        'foto_selfie',
+        'ket'
     ];
 
     public function jadwal()
     {
-        return $this->belongsTo(Jadwal::class);
+        return $this->belongsTo(Jadwal::class, 'id_jadwal');
     }
 }

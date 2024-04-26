@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mamin;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class MaminController extends Controller
 {
@@ -57,6 +59,29 @@ class MaminController extends Controller
         $mamin = Mamin::findOrFail($id);
         $mamin->delete();
         return redirect()->route('mamins.index');
+    }
+    public function exportPDF(){
+        // Retrieve data from the database
+        $mamins= Mamin::all();
+
+        // Load view file
+        $html = view('admin.mamin.pdf', compact('mamins'))->render();
+
+        // Configure Dompdf
+        $options = new Options();
+        $options->set('defaultFont', 'Arial');
+
+        // Instantiate Dompdf with options
+        $dompdf = new Dompdf($options);
+
+        // Load HTML content
+        $dompdf->loadHtml($html);
+
+        // Render PDF
+        $dompdf->render();
+
+        // Output PDF to browser
+        $dompdf->stream('Laporan Mamin.pdf');
     }
 }
 

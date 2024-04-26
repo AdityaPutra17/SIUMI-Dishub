@@ -29,7 +29,7 @@
                     <div class="col-lg-4 col-6">
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>50</h3>
+                                <h3>{{$karyawanHadir}}</h3>
                                 <p>Karyawan Hadir</p>
                             </div>
                             <div class="icon">
@@ -41,7 +41,7 @@
                     <div class="col-lg-4 col-6">
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>25</h3>
+                                <h3>{{$karyawanTidakHadir}}</h3>
                                 <p>Karyawan Tidak Hadir</p>
                             </div>
                             <div class="icon">
@@ -53,7 +53,7 @@
                     <div class="col-lg-4 col-6">
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>75</h3>
+                                <h3>{{$totalKaryawan}}</h3>
                                 <p>Total Karyawan</p>
                             </div>
                             <div class="icon">
@@ -68,7 +68,7 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Notifikasi</h3>
+                        <h3 class="card-title">Cara penggunaan</h3>
 
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -80,11 +80,31 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        Start creating your amazing application!
+                        Selamat datang di SIUMI (Sistem Informasi Umum dan Makan Minum)...👋👋
+                        <br>
+                        <br>
+                        SIUMI adalah sebuah plaform atau aplikasi berbasis web yang dibuat untuk mempermudah dalam melakukan manajemen umum dan karyawan, dalam hal ini adalah Security, Officeboy dan Laporan Mamin.
+                        <br>
+                        Pada bagian Side-bar terdapat beberapa fitur :
+                        <ol>
+                            <li>Data Karyawan</li>
+                            <p>Data karyawan merupakan Fitur untuk menambahkan akun karyawan agar bisa melakukan presensi</p>
+                            <li>Jadwal</li>
+                            <p>Pada menu Jadwal Admin bisa mengatur jadwal karyawan sesuai yang ditentukan</p>
+                            <li>Presensi</li>
+                            <p>Pada menu presensi, Admin bisa melihat dan mencetak hasil rekap presensi karyawan</p>
+                            <li>Laporan Kerusakan</li>
+                            <p>Bagian ini digunakan jika ada kerusakan barang, Admin dan karyawan lainnya bisa melaporkan kerusakan</p>
+                            <li>Laporan Pengajuan Izin</li>
+                            <p>Pada Fitur pengajuan izin, karyawan diharuskan melakukan upload data sesuai dengan form yang telah tertera. Admin bisa melihat dan melakukan perubahan presensi pada karyawan yang mengajukan izin</p>
+                            <li>Mamin : Konsumsi dan Natura</li>
+                            <p>Bagian Konsumsi diperuntukan untuk melaporkan pengadaan dan penggunaan jenis nasi box/snackbox dll.</p>
+                            <p>pada bagian natura diperuntukan untuk laporan seperti pangadaan dan penggunaan galon</p>
+                        </ol>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        Footer
+                        Selamat Berkerja
                     </div>
                     <!-- /.card-footer-->
                 </div>

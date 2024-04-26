@@ -1,4 +1,4 @@
-<aside class="main-sidebar bg-white elevation-4">
+<aside class="main-sidebar bg-white elevation-4 position-fixed ">
     <!-- Brand Logo -->
     <a href="/admin" class="brand-link bg-main-color">
         <img src="{{asset('assets/image/SIUMI.png')}}" alt="Logo Siumi" width="70px">
@@ -85,27 +85,14 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/admin/presensi" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>
                             Presensi
-                            <i class="right fas fa-angle-left"></i>
+
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Security</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>OB</p>
-                            </a>
-                        </li>
-                    </ul>
+
                 </li>
 
                 <li class="nav-item">

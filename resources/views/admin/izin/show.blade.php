@@ -62,6 +62,8 @@
                         @endif
                     </div>
                 </div>
+
+                <a href="{{ route('admin.presensi.detail', ['id' => $izin->user->id]) }}" class="btn btn-primary text-light ">Edit Presensi</a>
             </div>
         </div>
     </section>

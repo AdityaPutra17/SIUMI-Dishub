@@ -27,107 +27,46 @@
             <div class="col">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <label for="Date" class="col-form-label">Tanggal :</label>
-                    </div>
-                    <div class="col-auto">
-                        <input type="date" id="Date" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row align-items-center">
-                    <div class="col-auto">
                         <label for="Name" class="col-form-label">Nama :</label>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto d-flex gap-1">
                         <input type="text" id="Name" class="form-control">
+                        <button onclick="filterByName()" class="btn btn-secondary ">Search</button>
                     </div>
                 </div>
             </div>
             <div class="col d-flex justify-content-end">
-                <button class="btn btn-primary" type="button">Export</button>
+                <a href="{{ route('presensi.exportPDF') }}" class="btn btn-primary" target="_blank">Export</a>
             </div>
         </div>
 
-        <div class="col-12">
+        <div class="col-12" >
             <div class="card">
                 <div class="card-body table-responsive p-0" style="height: 300px;">
-                    <table class="table table-head-fixed text-nowrap table-striped rounded">
+                    <table class="table table-head-fixed text-nowrap table-striped rounded" id="userTable">
                         <thead>
                             <tr>
                                 <th>No.</th>
                                 <th>Nama</th>
-                                <th>Tanggal</th>
-                                <th>Status</th>
-                                <th>Masuk</th>
-                                <th>Keluar</th>
+                                <th>Role</th>
+                                <th>Presensi</th>
                             </tr>
                         </thead>
                         <tbody class="">
+                            @foreach ($users as $index => $us )
                             <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>1-4-2024</td>
-                                <td><span class="tag tag-success">Hadir</span></td>
-                                <td>foto awal</td>
-                                <td>foto akhir</td>
+                                <td>{{$index + 1}}</td>
+                                <td>{{$us->name}}</td>
+                                <td>{{$us->role}}</td>
+                                <td>
+                                    <div class="col-2">
+                                        <a href="{{ route('admin.presensi.detail', ['id' => $us->id]) }}"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </td>
+
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>1-4-2024</td>
-                                <td><span class="tag tag-success">Hadir</span></td>
-                                <td>foto awal</td>
-                                <td>foto akhir</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>1-4-2024</td>
-                                <td><span class="tag tag-success">Hadir</span></td>
-                                <td>foto awal</td>
-                                <td>foto akhir</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>1-4-2024</td>
-                                <td><span class="tag tag-success">Hadir</span></td>
-                                <td>foto awal</td>
-                                <td>foto akhir</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>1-4-2024</td>
-                                <td><span class="tag tag-success">Hadir</span></td>
-                                <td>foto awal</td>
-                                <td>foto akhir</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>1-4-2024</td>
-                                <td><span class="tag tag-success">Hadir</span></td>
-                                <td>foto awal</td>
-                                <td>foto akhir</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>1-4-2024</td>
-                                <td><span class="tag tag-success">Hadir</span></td>
-                                <td>foto awal</td>
-                                <td>foto akhir</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>1-4-2024</td>
-                                <td><span class="tag tag-success">Hadir</span></td>
-                                <td>foto awal</td>
-                                <td>foto akhir</td>
-                            </tr>
+                        @endforeach
+
                         </tbody>
                     </table>
                 </div>

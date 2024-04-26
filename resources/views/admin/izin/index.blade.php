@@ -26,9 +26,6 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Data Laporan Pengajuan Izin</h3>
-                    <div class="card-tools px-5">
-                        <a href="#" class="btn btn-default bg-success">Add</a>
-                    </div>
                 </div>
 
                 <div class="card-body table-responsive p-0" style="height: 300px;">

@@ -2,7 +2,7 @@
     <div class="row gap-5 text-light d-flex justify-content-between ">
         <div class="col-md-3">
             <img src="/assets/image/siumifooter.png" alt="logoapps" width="80%" class="logoapps" />
-            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, dicta!</p>
+            <p class="desc">SIUMI adalah sebuah plaform atau aplikasi berbasis web yang dibuat untuk mempermudah dalam melakukan manajemen umum dan karyawan, dalam hal ini adalah Security, Officeboy dan Laporan Mamin.</p>
         </div>
         <div class="col-md-4 text-light">
             <h3 class="contact">Contact</h3>

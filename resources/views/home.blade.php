@@ -29,7 +29,7 @@
             {{-- Menu --}}
             <div class="menu row mt-5 justify-content-between">
                 {{-- Button Presensi --}}
-                <a href="/presensi"
+                <a href="/home/presensi"
                     class="col-lg-2 col-md-2 col-sm-3 col-5 bg-main-color rounded yellow-color p-2 text-center align-content-center text-decoration-none">
                     <i class="icon fa-solid fa-book fs-4 "></i>
                     <p class="">Presensi</p>
@@ -66,11 +66,14 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                     <h3 class="RfTitle fw-bold">Jadwal Kerja</h3>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-end ">
-                    <a href="/home/gantishift"
-                        class="RfContent bg-main-color text-light p-3 rounded-3 text-decoration-none fw-bolder ">Ganti Shift</a>
-                </div>
+                {{-- Button Ganti Shift Security --}}
+                @if (Auth::user()->role === 'Security')
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-end ">
+                        <a href="/home/gantishift" class="RfContent bg-main-color text-light p-3 rounded-3 text-decoration-none fw-bolder ">Ganti Shift</a>
+                    </div>
+                @endif
             </div>
+            {{-- Table Jadwal Security --}}
             <div class="my-5">
                 <table class="table table-striped rounded RfContent">
                     <thead>
@@ -82,18 +85,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if (count($jadwals)>0)
-                            @foreach ($jadwals as $index => $jadwal)
-                                <tr class="{{ $index % 2 == 0 ? 'bg-yellow-table RfContent' : 'bg-blue-table' }}">
-                                    <th class="isi-table" scope="row">{{$index + 1}}</th>
-                                    <td>{{$jadwal->tgl_masuk}}</td>
-                                    <td class="isi-table">{{ $jadwal->shift->nama }}</td>
-                                    <td class="isi-table">{{$jadwal->shift->jam_masuk}} - {{$jadwal->shift->jam_keluar}}</td>
+                        @if (Auth::user()->role === 'Security')
+                            @if (count($jadwals)>0)
+                                @foreach ($jadwals as $index => $jadwal)
+                                    <tr class="{{ $index % 2 == 0 ? 'bg-yellow-table RfContent' : 'bg-blue-table' }}">
+                                        <th class="isi-table" scope="row">{{$index + 1}}</th>
+                                        <td>{{$jadwal->tgl_masuk}}</td>
+                                        <td class="isi-table">{{ $jadwal->shift->nama }}</td>
+                                        <td class="isi-table">{{$jadwal->shift->jam_masuk}} - {{$jadwal->shift->jam_keluar}}</td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr class="bg-yellow-table">
+                                    <td colspan="4" class="isi-table text-center fw-bold text-secondary ">Data Tidak Ada</td>
                                 </tr>
-                            @endforeach
+                            @endif
                         @else
                             <tr class="bg-yellow-table">
-                                <td colspan="4" class="isi-table text-center fw-bold text-secondary ">Data Tidak Ada</td>
+                                <td colspan="4" class="isi-table text-center fw-bold text-secondary ">Senin - Jumat</td>
                             </tr>
                         @endif
                     </tbody>

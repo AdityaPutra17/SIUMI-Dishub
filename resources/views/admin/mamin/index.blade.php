@@ -28,6 +28,7 @@
                 <h3 class="card-title">Data Laporan Makan & Minum</h3>
                 <div class="card-tools px-5">
                     <a href="/admin/mamins/create" class="btn btn-default bg-success">Add</a>
+                    <a href="{{route('mamin.exportPDF')}}" class="btn btn-default bg-primary">Export</a>
                 </div>
             </div>
 
@@ -51,7 +52,6 @@
                             @foreach ($mamins as $index => $mamin )
                             <tr>
                                 <td>{{$index + 1}}</td>
-
                                 <td>{{$mamin->tanggal}}</td>
                                 <td>{{$mamin->name}}</td>
                                 <td>{{$mamin->jenis}}</td>

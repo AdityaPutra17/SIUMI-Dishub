@@ -18,8 +18,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="hold-transition sidebar-mini overflow-y-hidden ">
-    <nav class="main-header navbar navbar-expand bg-main-color">
+<body class="hold-transition sidebar-mini min-vh-100">
+    <nav class="main-header navbar navbar-expand bg-main-color position-fixed w-100 ">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link " data-widget="pushmenu" href="#"><i class="fas fa-bars text-light"></i></a>
@@ -45,7 +45,7 @@
     <!-- jQuery -->
     <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -53,7 +53,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-
+    <script src="/assets/js/script.js"></script>
 </body>
 
 </html>

@@ -1,11 +1,14 @@
 @extends('tamplate')
 @section('content')
 
-<div class="content-wrapper container">
+<div class="content-wrapper container py-5">
 
     <!-- Content Header (Page header) -->
     <section class="content-header py-3">
-        <div class="container-fluid">
+        <div class="container-fluid d-flex ">
+            <div class="col-1">
+                <a style="font-size: 3vw"  class="text-center" href="{{ route('home') }}"><i class="fa-solid fa-angle-left"></i></a>
+            </div>
             <h3 class="RfTitle">Laporan Kerusakan</h3>
         </div>
     </section>
